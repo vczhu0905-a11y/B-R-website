@@ -1,0 +1,3290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="全球储能解决方案值得信赖的合作伙伴">
+    <title>北京一路智行科技有限公司 | 全球储能解决方案值得信赖的合作伙伴</title>
+    
+    <!-- Schema 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "北京一路智行科技有限公司",
+        "url": "https://www.brt-energy.com",
+        "logo": "https://www.brt-energy.com/logo.png",
+        "description": "全球储能解决方案值得信赖的合作伙伴",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "vincent.zhu@brcorp.cn",
+            "contactType": "sales"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/brtech",
+            "https://www.youtube.com/@brtech",
+            "https://www.instagram.com/brtech"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "EnerShare Core 1.0",
+        "image": "https://s.coze.cn/image/Leb7yjcYzqY/",
+        "description": "欧洲最受欢迎的高压堆叠电池，容量范围：5.5kWh - 153.6kWh",
+        "brand": {
+            "@type": "Brand",
+            "name": "EnerShare"
+        }
+    }
+    </script>
+    
+    <style>
+        /* ==================== CSS 变量与基础设置 ==================== */
+        :root {
+            /* 品牌色系 */
+            --primary-color: #0066CC;
+            --primary-light: #0078D4;
+            --primary-dark: #0056B3;
+            --secondary-color: #00B4D8;
+            --secondary-light: #48CAE4;
+            --secondary-dark: #0096C7;
+            
+            /* 中性色 */
+            --dark-color: #1A1A2E;
+            --dark-light: #2D3748;
+            --gray-color: #4A5568;
+            --light-color: #F8F9FA;
+            --lighter-color: #EDF2F7;
+            --white: #FFFFFF;
+            
+            /* 强调色 */
+            --accent-color: #FF6B35;
+            --success-color: #10B981;
+            --warning-color: #F59E0B;
+            
+            /* 阴影 */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+            --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.2);
+            
+            /* 间距 */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+            --spacing-3xl: 6rem;
+            
+            /* 圆角 */
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 20px;
+            --radius-full: 9999px;
+            
+            /* 导航栏高度 */
+            --nav-height: 80px;
+            --nav-height-mobile: 60px;
+            
+            /* 过渡 */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        /* ==================== 基础重置 ==================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        html {
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-light);
+            background-color: var(--white);
+            overflow-x: hidden;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* ==================== 触摸优化 ==================== */
+        a, button, .btn, input, select, textarea {
+            touch-action: manipulation;
+            outline: none;
+        }
+        
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+            outline: 3px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+        
+        /* ==================== 容器 ==================== */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* ==================== 滚动动画类 ==================== */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            will-change: opacity, transform;
+        }
+        
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-animate-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            will-change: opacity, transform;
+        }
+        
+        .scroll-animate-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-animate-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            will-change: opacity, transform;
+        }
+        
+        .scroll-animate-scale.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* ==================== 视差效果 ==================== */
+        .parallax-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .parallax-bg {
+            position: absolute;
+            top: -20%;
+            left: 0;
+            width: 100%;
+            height: 140%;
+            background-size: cover;
+            background-position: center;
+            transform: translateY(0);
+            will-change: transform;
+            z-index: -1;
+        }
+        
+        /* ==================== 语言切换器 ==================== */
+        .language-switcher {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            padding: 0.5rem 0;
+            min-width: 120px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all var(--transition-normal);
+            z-index: 1000;
+        }
+        
+        .language-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(10px);
+        }
+        
+        .language-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background: var(--light-color);
+            border: 1px solid var(--lighter-color);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark-light);
+        }
+        
+        .language-btn:hover {
+            background: var(--lighter-color);
+            border-color: var(--secondary-light);
+        }
+        
+        .language-option {
+            display: block;
+            padding: 0.6rem 1rem;
+            text-decoration: none;
+            color: var(--dark-light);
+            transition: all var(--transition-fast);
+            cursor: pointer;
+        }
+        
+        .language-option:hover {
+            background: var(--light-color);
+            color: var(--primary-color);
+        }
+        
+        .language-option.active {
+            background: var(--primary-light);
+            color: var(--white);
+        }
+        
+        /* ==================== 导航栏 ==================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-height);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            transition: all var(--transition-normal);
+        }
+        
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+            height: 70px;
+        }
+        
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .logo img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        /* 桌面端导航 */
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-light);
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color var(--transition-fast);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transition: width var(--transition-normal);
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        /* 按钮样式 */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 2.4rem;
+            border: none;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            text-decoration: none;
+            white-space: nowrap;
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.4);
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+        }
+        
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-large {
+            padding: 1.1rem 3rem;
+            font-size: 1.1rem;
+            min-width: 200px;
+        }
+        
+        .desktop-only {
+            display: inline-flex;
+        }
+        
+        /* 移动端菜单按钮 */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary-color);
+            padding: 10px 15px;
+            z-index: 1001;
+            line-height: 1;
+            transition: all var(--transition-normal);
+        }
+        
+        .mobile-menu-btn:hover {
+            background: var(--light-color);
+            border-radius: var(--radius-md);
+        }
+        
+        .mobile-menu-btn:active {
+            transform: scale(0.95);
+        }
+        
+        /* 移动端菜单关闭按钮 */
+        .menu-close {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            background: var(--light-color);
+            border: none;
+            border-radius: var(--radius-full);
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--dark-light);
+            z-index: 1002;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .menu-close:hover {
+            background: var(--lighter-color);
+            transform: rotate(90deg);
+        }
+        
+        /* 遮罩层 */
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+        
+        .menu-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        /* ==================== 页面切换 ==================== */
+        .page {
+            display: none;
+            padding-top: var(--nav-height);
+            min-height: 100vh;
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+        
+        .page.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        .page.fade-in {
+            animation: fadeIn var(--transition-normal);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* ==================== 英雄区（带视差） ==================== */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--white);
+            padding: 160px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -20%;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            animation: pulse 12s ease-in-out infinite reverse;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: fadeInDown 1s ease;
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            font-weight: 400;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+        
+        .hero-buttons .btn {
+            min-width: 180px;
+        }
+        
+        .hero-buttons .btn:active {
+            transform: scale(0.95);
+        }
+        
+        /* ==================== 章节 ==================== */
+        .section {
+            padding: 120px 0;
+            position: relative;
+        }
+        
+        .section-light {
+            background: var(--light-color);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        
+        .section-header p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--gray-color);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* ==================== 合作伙伴网格 ==================== */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .partner-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: all var(--transition-normal);
+            border: 2px solid transparent;
+            will-change: transform;
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+        
+        .partner-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: var(--white);
+        }
+        
+        .partner-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .partner-card p {
+            color: var(--gray-color);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        /* ==================== 产品网格（带图片） ==================== */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+            will-change: transform;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .product-image {
+            height: 280px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+        
+        .product-image-overlay span {
+            background: var(--white);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .product-content {
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-content h3 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .product-content ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+            flex: 1;
+        }
+        
+        .product-content li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--gray-color);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .product-content li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        /* ==================== 优势网格 ==================== */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .advantage-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+            border-left: 4px solid var(--primary-color);
+            will-change: transform;
+        }
+        
+        .advantage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .advantage-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.35rem;
+            font-weight: 700;
+        }
+        
+        .advantage-card p {
+            color: var(--gray-color);
+            line-height: 1.8;
+        }
+        
+        /* ==================== 案例研究（带图片） ==================== */
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .case-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+            will-change: transform;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .case-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .case-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+        }
+        
+        .case-content {
+            padding: 2rem;
+        }
+        
+        .case-content h3 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .case-content p {
+            color: var(--gray-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+        
+        /* ==================== 产品详情 ==================== */
+        .product-detail {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 3rem;
+        }
+        
+        .product-detail h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            font-weight: 700;
+        }
+        
+        .product-detail h3 {
+            color: var(--dark-color);
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .product-detail p {
+            color: var(--gray-color);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .product-detail ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+        
+        .product-detail li {
+            padding: 1rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            color: var(--gray-color);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .product-detail li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        /* 表格样式 */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 2rem;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .table-wrapper {
+            min-width: 800px;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        
+        .specs-table thead, .specs-table tbody {
+            display: table;
+            width: 100%;
+        }
+        
+        .specs-table th, .specs-table td {
+            padding: 1rem 1.25rem;
+            text-align: left;
+            border-bottom: 1px solid var(--lighter-color);
+        }
+        
+        .specs-table th {
+            background: var(--light-color);
+            font-weight: 600;
+            color: var(--dark-color);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .specs-table tr:hover td {
+            background: var(--light-color);
+        }
+        
+        .specs-table td:first-child, .specs-table th:first-child {
+            font-weight: 600;
+            color: var(--dark-light);
+        }
+        
+        /* ==================== 联系表单 ==================== */
+        .contact-section {
+            padding: 120px 0;
+            background: var(--light-color);
+        }
+        
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .contact-form h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: var(--dark-light);
+            font-size: 0.95rem;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--lighter-color);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all var(--transition-fast);
+            background: var(--white);
+        }
+        
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+        
+        /* ==================== 页脚 ==================== */
+        .footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .footer-logo {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 1rem;
+            object-fit: contain;
+        }
+        
+        .footer-section p {
+            color: #CBD5E0;
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        
+        .footer-section a {
+            color: #CBD5E0;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            display: inline-block;
+            padding: 0.25rem 0;
+        }
+        
+        .footer-section a:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #A0AEC0;
+            font-size: 0.9rem;
+        }
+        
+        /* ==================== Toast 通知 ==================== */
+        .toast-container {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 10000;
+        }
+        
+        .toast {
+            background: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            min-width: 300px;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            opacity: 0;
+        }
+        
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .toast.success {
+            border-left: 4px solid var(--success-color);
+        }
+        
+        .toast.error {
+            border-left: 4px solid var(--warning-color);
+        }
+        
+        .toast-icon {
+            font-size: 1.5rem;
+        }
+        
+        .toast.success .toast-icon {
+            color: var(--success-color);
+        }
+        
+        .toast.error .toast-icon {
+            color: var(--warning-color);
+        }
+        
+        .toast-message {
+            flex: 1;
+        }
+        
+        .toast-close {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--gray-color);
+            padding: 0;
+        }
+        
+        .toast-close:hover {
+            color: var(--dark-light);
+        }
+        
+        /* ==================== 加载动画 ==================== */
+        .page-loading {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--white);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+        
+        .page-loading.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid var(--lighter-color);
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            will-change: transform;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            margin-top: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        /* ==================== 响应式设计 ==================== */
+        @media (max-width: 1200px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            }
+            
+            .case-studies-grid {
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            }
+            
+            .section {
+                padding: 100px 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            :root {
+                --nav-height: var(--nav-height-mobile);
+            }
+            
+            html {
+                font-size: 15px;
+            }
+            
+            body {
+                font-size: 15px;
+            }
+            
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .navbar-content {
+                padding: 0 1.5rem;
+            }
+            
+            /* 移动端导航 */
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .desktop-only {
+                display: none;
+            }
+            
+            .menu-close {
+                display: flex;
+            }
+            
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: var(--white);
+                padding: 100px 1.5rem 30px;
+                transform: translateX(100%);
+                transition: transform var(--transition-normal);
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15);
+                z-index: 999;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                gap: 0;
+                align-items: stretch;
+            }
+            
+            .nav-links.active {
+                transform: translateX(0);
+            }
+            
+            .nav-links li {
+                width: 100%;
+                margin-bottom: 0;
+                text-align: left;
+            }
+            
+            .nav-links a {
+                display: flex;
+                align-items: center;
+                padding: 1.25rem 1.5rem;
+                font-size: 1.15rem;
+                border-bottom: 1px solid var(--lighter-color);
+                color: var(--dark-light);
+                font-weight: 500;
+            }
+            
+            .nav-links a::after {
+                display: none;
+            }
+            
+            .nav-links a.active {
+                color: var(--primary-color);
+                background: var(--light-color);
+                border-radius: var(--radius-md);
+                margin: 0.25rem 0;
+            }
+            
+            /* 英雄区 */
+            .hero {
+                padding: 100px 0 70px;
+            }
+            
+            .hero-content {
+                padding: 0 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.05rem;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                gap: 1rem;
+                padding: 0 1.5rem;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1rem;
+                min-width: auto;
+            }
+            
+            /* 章节 */
+            .section {
+                padding: 70px 0;
+            }
+            
+            .section-header {
+                margin-bottom: 3rem;
+                padding: 0 1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .section-header p {
+                font-size: 1rem;
+            }
+            
+            /* 卡片网格 */
+            .products-grid, .partners-grid, .advantages-grid, .case-studies-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            /* 产品卡片 */
+            .product-image {
+                height: 200px;
+            }
+            
+            .product-content, .partner-card, .advantage-card, .case-content {
+                padding: 1.75rem;
+            }
+            
+            .product-content h3, .partner-card h3, .advantage-card h3, .case-content h3 {
+                font-size: 1.25rem;
+            }
+            
+            .product-content li, .partner-card p, .advantage-card p, .case-content p {
+                font-size: 0.95rem;
+            }
+            
+            /* 表格 */
+            .table-container {
+                margin-left: -1rem;
+                margin-right: -1rem;
+            }
+            
+            .specs-table {
+                font-size: 0.85rem;
+            }
+            
+            .specs-table th, .specs-table td {
+                padding: 0.875rem 1rem;
+                white-space: nowrap;
+            }
+            
+            /* 表单 */
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .form-group {
+                margin-bottom: 1rem;
+            }
+            
+            .form-group label {
+                font-size: 0.9rem;
+            }
+            
+            .form-group input, .form-group select, .form-group textarea {
+                padding: 1rem;
+                font-size: 16px;
+                border-radius: var(--radius-md);
+            }
+            
+            .form-group textarea {
+                min-height: 120px;
+            }
+            
+            /* 产品详情 */
+            .product-detail {
+                padding: 2rem 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .product-detail h2 {
+                font-size: 1.6rem;
+            }
+            
+            .product-detail h3 {
+                font-size: 1.25rem;
+            }
+            
+            .product-detail li {
+                font-size: 0.95rem;
+            }
+            
+            /* 页脚 */
+            .footer {
+                padding: 60px 0 25px;
+            }
+            
+            .footer-content {
+                gap: 2rem;
+            }
+            
+            .footer-section h4 {
+                font-size: 1.1rem;
+            }
+            
+            .footer-section p, .footer-section a {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+            
+            :root {
+                --nav-height: 55px;
+            }
+            
+            .navbar {
+                padding: 0;
+            }
+            
+            .navbar-content {
+                padding: 0 1rem;
+            }
+            
+            .logo {
+                font-size: 1.1rem;
+            }
+            
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+            
+            .mobile-menu-btn {
+                font-size: 1.6rem;
+                padding: 8px 12px;
+            }
+            
+            .menu-close {
+                width: 48px;
+                height: 48px;
+                font-size: 1.8rem;
+                top: 15px;
+                right: 15px;
+            }
+            
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero-badge {
+                font-size: 0.8rem;
+                padding: 0.4rem 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+            
+            .section-header p {
+                font-size: 0.95rem;
+            }
+            
+            .product-image {
+                height: 180px;
+            }
+            
+            .partner-icon {
+                width: 64px;
+                height: 64px;
+                font-size: 2rem;
+            }
+            
+            .product-content h3, .partner-card h3, .advantage-card h3, .case-content h3 {
+                font-size: 1.15rem;
+            }
+            
+            .product-content li, .partner-card p, .advantage-card p, .case-content p {
+                font-size: 0.9rem;
+            }
+            
+            .contact-form {
+                padding: 1.75rem 1.25rem;
+            }
+            
+            .contact-form h2 {
+                font-size: 1.6rem;
+            }
+            
+            .form-group label {
+                font-size: 0.85rem;
+            }
+            
+            .specs-table {
+                font-size: 0.75rem;
+            }
+            
+            .specs-table th, .specs-table td {
+                padding: 0.75rem 0.875rem;
+                white-space: nowrap;
+            }
+            
+            .product-detail {
+                padding: 1.75rem 1.25rem;
+            }
+            
+            .product-detail h2 {
+                font-size: 1.4rem;
+            }
+            
+            .product-detail h3 {
+                font-size: 1.15rem;
+            }
+            
+            .product-detail li {
+                font-size: 0.9rem;
+            }
+            
+            .footer {
+                padding: 50px 0 20px;
+            }
+            
+            .footer-content {
+                gap: 2rem;
+            }
+            
+            .footer-section h4 {
+                font-size: 1rem;
+            }
+            
+            .footer-section p, .footer-section a {
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* ==================== 减少动画（用户偏好） ==================== */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* ==================== 打印样式 ==================== */
+        @media print {
+            .navbar, .footer, .hero-buttons, .mobile-menu-btn, .menu-close, .menu-overlay, .language-switcher {
+                display: none;
+            }
+            
+            .page {
+                padding-top: 0;
+            }
+            
+            .hero {
+                background: var(--light-color);
+                color: var(--dark-light);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 加载动画 -->
+    <div class="page-loading active" id="pageLoading">
+        <div class="spinner"></div>
+        <div class="loading-text" id="loadingText">正在加载...</div>
+    </div>
+    
+    <!-- Toast 通知容器 -->
+    <div class="toast-container" id="toastContainer"></div>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-content">
+            <a href="#" class="logo" onclick="navigateTo('home'); return false;">
+                <img src="https://www.coze.cn/s/Sg-gafwXF90/?width_height=1773x1526" alt="Beijing B&R Technology">
+                <span data-i18n="footer.company">北京一路智行科技</span>
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" data-page="home" data-i18n="nav.home" class="active">首页</a></li>
+                <li><a href="#" data-page="products" data-i18n="nav.products">产品中心</a></li>
+                <li><a href="#" data-page="solutions" data-i18n="nav.solutions">解决方案</a></li>
+                <li><a href="#" data-page="about" data-i18n="nav.about">关于我们</a></li>
+                <li><a href="#" data-page="contact" data-i18n="nav.contact">联系我们</a></li>
+                <li>
+                    <div class="language-switcher">
+                        <button class="language-btn" id="languageBtn">
+                            <span id="currentLanguage">🇨🇳 中文</span>
+                        </button>
+                        <div class="language-dropdown" id="languageDropdown">
+                            <span class="language-option active" data-lang="zh-CN">🇨🇳 中文</span>
+                            <span class="language-option" data-lang="en">🇬🇧 English</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="desktop-only">
+                    <a href="#" onclick="navigateTo('contact'); return false;" class="btn btn-primary" data-i18n="nav.cta">获取报价</a>
+                </li>
+            </ul>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+    
+    <!-- 移动端菜单关闭按钮 -->
+    <button class="menu-close" id="menuClose">✕</button>
+    
+    <!-- 移动端菜单遮罩 -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    
+    <!-- 首页 -->
+    <div class="page active" id="home">
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge" data-i18n="hero.badge">全球领先储能解决方案</div>
+                <h1 data-i18n="hero.headline">全球储能解决方案值得信赖的合作伙伴</h1>
+                <p data-i18n="hero.subheadline">将中国领先技术连接至欧洲及中东市场 | BYD、EnerShare 授权代理商</p>
+                <div class="hero-buttons">
+                    <a href="#" onclick="navigateTo('contact'); return false;" class="btn btn-primary btn-large" data-i18n="hero.cta_primary">获取报价</a>
+                    <a href="#" onclick="navigateTo('products'); return false;" class="btn btn-secondary btn-large" data-i18n="hero.cta_secondary">探索产品</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="container">
+                <div class="section-header scroll-animate">
+                    <h2 data-i18n="partners.title">依托行业领军品牌</h2>
+                    <p data-i18n="partners.subtitle">我们代表全球最值得信赖的储能品牌</p>
+                </div>
+                
+                <div class="partners-grid">
+                    <div class="partner-card scroll-animate" style="background: white;">
+                        <img src="https://www.coze.cn/s/Rey8W_zztJc/" alt="BYD Energy Logo" style="width: 180px; height: auto; object-fit: contain; margin-bottom: 1rem;">
+                        <h3 data-i18n="partners.byd">BYD</h3>
+                        <p data-i18n="partners.byd_desc">全球电芯与大型储能领导者</p>
+                    </div>
+                    
+                    <div class="partner-card scroll-animate" style="background: white;">
+                        <img src="https://www.coze.cn/s/R9tkO2DdNTE/" alt="EnerShare Logo" style="width: 160px; height: auto; object-fit: contain; margin-bottom: 1rem;">
+                        <h3 data-i18n="partners.enershare">EnerShare</h3>
+                        <p data-i18n="partners.enershare_desc">欧洲热销户用储能解决方案</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-header scroll-animate">
+                    <h2 data-i18n="products.title">完整储能产品组合</h2>
+                    <p data-i18n="products.subtitle">从户用家庭到大型公用事业项目</p>
+                </div>
+                
+                <div class="products-grid">
+                    <div class="product-card scroll-animate">
+                        <div class="product-image" style="background: white;">
+                            <img src="https://ueeshop.ly200-cdn.com/u_file/UPBE/UPBE383/2502/21/products/HighVoltagestackBattery1.jpg?x-oss-process=image/format,webp/quality,q_100/resize,m_lfit,h_640,w_640" alt="EnerShare CORE 1.0">
+                            <div class="product-image-overlay">
+                                <span data-i18n="products.residential_badge">户用储能</span>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 data-i18n="products.residential_title">户用储能（Residential ESS）</h3>
+                            <ul>
+                                <li data-i18n="products.residential_1">EnerShare Core 1.0/Active 系列</li>
+                                <li data-i18n="products.residential_2">可堆叠 4.8-153.6 kWh</li>
+                                <li data-i18n="products.residential_3">即插即用安装</li>
+                                <li data-i18n="products.residential_4">欧洲 7 天交付</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card scroll-animate">
+                        <div class="product-image" style="background: white;">
+                            <img src="https://ueeshop.ly200-cdn.com/u_file/UPBE/UPBE383/2503/18/products/361.png?x-oss-process=image/format,webp/quality,q_100/resize,m_lfit,h_500,w_500" alt="Enerbrick 2.1">
+                            <div class="product-image-overlay">
+                                <span data-i18n="products.ci_badge">工商业储能</span>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 data-i18n="products.ci_title">工商业储能（C&I ESS）</h3>
+                            <ul>
+                                <li data-i18n="products.ci_1">EnerShare Enerbrick 2.1 系列</li>
+                                <li data-i18n="products.ci_2">200kWh - 1MWh 范围</li>
+                                <li data-i18n="products.ci_3">削峰填谷与需求管理</li>
+                                <li data-i18n="products.ci_4">并网/离网切换</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card scroll-animate">
+                        <div class="product-image" style="background: white;">
+                            <img src="https://ueeshop.ly200-cdn.com/u_file/UPBE/UPBE383/2503/18/products/1043-.png?x-oss-process=image/format,webp/quality,q_100/resize,m_lfit,h_500,w_500" alt="EnerBank V2.0">
+                            <div class="product-image-overlay">
+                                <span data-i18n="products.utility_badge">大型储能</span>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 data-i18n="products.utility_title">大型储能（Utility-Scale ESS）</h3>
+                            <ul>
+                                <li data-i18n="products.utility_1">BYD MC Cube/Cube Pro</li>
+                                <li data-i18n="products.utility_2">单集装箱最大容量 5MWh+</li>
+                                <li data-i18n="products.utility_3">全球首创 CTS 技术</li>
+                                <li data-i18n="products.utility_4">液冷系统温控 <3°C</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="container">
+                <div class="section-header scroll-animate">
+                    <h2 data-i18n="advantages.title">为什么选择北京一路智行科技？</h2>
+                </div>
+                
+                <div class="advantages-grid">
+                    <div class="advantage-card scroll-animate">
+                        <h3 data-i18n="advantages.positioning_title">精准市场定位</h3>
+                        <p data-i18n="advantages.positioning_desc">深入洞察国际市场需求，针对不同区域提供定制化、多样化解决方案。专注于欧洲及中东市场。</p>
+                    </div>
+                    
+                    <div class="advantage-card scroll-animate">
+                        <h3 data-i18n="advantages.network_title">广泛渠道网络</h3>
+                        <p data-i18n="advantages.network_desc">线上线下销售渠道，多国售后服务网点。阿联酋、科威特、芬兰、格鲁吉亚、蒙古等地本土化服务。</p>
+                    </div>
+                    
+                    <div class="advantage-card scroll-animate">
+                        <h3 data-i18n="advantages.service_title">一站式服务</h3>
+                        <p data-i18n="advantages.service_desc">方案设计 → 采购 → 国际物流 → 目的地交付 → 运维。为全球客户提供端到端支持。</p>
+                    </div>
+                    
+                    <div class="advantage-card scroll-animate">
+                        <h3 data-i18n="advantages.quality_title">质量与安全至上</h3>
+                        <p data-i18n="advantages.quality_desc">BYD 刀片电池技术（针刺实验不起火），通过 UL9540A、IEC62619、CE、UN38.3 认证。工作温度范围 -30°C 至 +55°C。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-header scroll-animate">
+                    <h2 data-i18n="cases.title">全球实践，业绩斐然</h2>
+                    <p data-i18n="cases.subtitle">在各大洲交付可靠的储能解决方案</p>
+                </div>
+                
+                <div class="case-studies-grid">
+                    <div class="case-card scroll-animate">
+                        <div class="case-content">
+                            <h3 data-i18n="cases.case1_title">🌍 南非 - Pongola 狩猎度假村</h3>
+                            <p data-i18n="cases.case1_desc">125kW 光伏 + 100kW/215kWh 储能系统</p>
+                            <p data-i18n="cases.case1_note">户外环境，可靠性要求高</p>
+                        </div>
+                    </div>
+                    
+                    <div class="case-card scroll-animate">
+                        <div class="case-content">
+                            <h3 data-i18n="cases.case2_title">🏨 南非 - 约翰内斯堡酒店</h3>
+                            <p data-i18n="cases.case2_desc">500kW 光伏 + 500kW/1MWh 储能系统</p>
+                            <p data-i18n="cases.case2_note">大型商用储能，削峰填谷</p>
+                        </div>
+                    </div>
+                    
+                    <div class="case-card scroll-animate">
+                        <div class="case-content">
+                            <h3 data-i18n="cases.case3_title">☀️ 阿曼 - 马斯喀特酒店</h3>
+                            <p data-i18n="cases.case3_desc">200kW/430kWh 储能系统</p>
+                            <p data-i18n="cases.case3_note">高温环境适应性</p>
+                        </div>
+                    </div>
+                    
+                    <div class="case-card scroll-animate">
+                        <div class="case-content">
+                            <h3 data-i18n="cases.case4_title">🏝️ 斯里兰卡 - 酒店</h3>
+                            <p data-i18n="cases.case4_desc">200kW/430kWh 储能系统</p>
+                            <p data-i18n="cases.case4_note">备用电源保障</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- 产品中心页面 -->
+    <div class="page" id="products">
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="products_page.title">产品中心</h2>
+                    <p data-i18n="products_page.subtitle">详细的技术规格和产品信息</p>
+                </div>
+                
+                <div class="product-detail">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <img src="https://www.bydenergy.com/material/energy_storage_cn/productdetails-utility-scale/haohan/pc_new/haohanPC-CN.jpg" alt="BYD Haohan 浩瀚" style="max-width: 600px; height: auto; object-fit: contain;">
+                    </div>
+                    <h2 data-i18n="products_page.haohan_title">Haohan 浩瀚 - 大型储能系统</h2>
+                    <p>搭载全球最大储能专用刀片电池2,710Ah，全新一代大型储能系统</p>
+                    
+                    <h3>产品亮点</h3>
+                    <ul>
+                        <li>最小单元容量达 <strong>14.5MWh</strong></li>
+                        <li>搭载全球最大储能专用刀片电池 <strong>2,710Ah</strong></li>
+                        <li>全球最高体积能量密度 <strong>233.8kWh/m³</strong></li>
+                        <li>全球最大等效20尺容量 <strong>10MWh</strong></li>
+                        <li>全球最高体积利用率 <strong>Vcts</strong></li>
+                        <li>全球最高整机防护等级 <strong>IP66</strong></li>
+                    </ul>
+                    
+                    <h3>技术参数</h3>
+                    <div class="table-container">
+                        <div class="table-wrapper">
+                            <table class="specs-table">
+                                <thead>
+                                    <tr>
+                                        <th>系统型号</th>
+                                        <th>XN2C-B7284-A-R4</th>
+                                        <th>XN4C-B14568-A-R4</th>
+                                        <th>XN4C-B14568-A-R8</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>额定能量</td>
+                                        <td>7,284kWh</td>
+                                        <td>14,568kWh</td>
+                                        <td>14,568kWh</td>
+                                    </tr>
+                                    <tr>
+                                        <td>额定功率</td>
+                                        <td>1,821kW</td>
+                                        <td>3,642kW</td>
+                                        <td>1,820kW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>冷却方式</td>
+                                        <td colspan="3">液冷</td>
+                                    </tr>
+                                    <tr>
+                                        <td>防护等级</td>
+                                        <td colspan="3">IP66</td>
+                                    </tr>
+                                    <tr>
+                                        <td>符合标准</td>
+                                        <td colspan="3">GB/T 36276，GB 44240，GB/T 34131，GB/T 44026</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-detail">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <img src="https://ueeshop.ly200-cdn.com/u_file/UPBE/UPBE383/2502/21/products/HighVoltagestackBattery1.jpg?x-oss-process=image/format,webp/quality,q_100/resize,m_lfit,h_640,w_640" alt="EnerShare CORE 1.0" style="max-width: 400px; height: auto; object-fit: contain;">
+                    </div>
+                    <h2 data-i18n="products_page.core_title">EnerShare CORE 1.0系列 - 高压堆叠电池</h2>
+                    <p data-i18n="products_page.core_desc">欧洲最受欢迎的高压堆叠电池，容量范围：5.5kWh - 153.6kWh</p>
+                    
+                    <h3 data-i18n="products_page.features_title">产品特点</h3>
+                    <ul>
+                        <li data-i18n="products_page.feature_1">LFP电芯技术，安全可靠</li>
+                        <li data-i18n="products_page.feature_2">自动逆变器配置，免设置</li>
+                        <li data-i18n="products_page.feature_3">支持单相/三相，并网/离网/备用电源</li>
+                        <li data-i18n="products_page.feature_4">IP65防护，VDE2510合规</li>
+                        <li data-i18n="products_page.feature_5">最多6塔并联，系统可扩展至153.6kWh</li>
+                    </ul>
+                    
+                    <h3 data-i18n="products_page.specs_title">技术参数</h3>
+                    <div class="table-container">
+                        <div class="table-wrapper">
+                            <table class="specs-table">
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="specs.parameter">参数</th>
+                                        <th>Power-CORE 1.0</th>
+                                        <th>Energy-CORE 1.0</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-i18n="specs.energy">可用能量</td>
+                                        <td>2.76 kWh</td>
+                                        <td>3.3 kWh</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.voltage_nominal">标称电压</td>
+                                        <td>102.4 V</td>
+                                        <td>64 V</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.voltage_working">工作电压</td>
+                                        <td>86.4~116.8 V</td>
+                                        <td>54~73 V</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.current_max">最大电流</td>
+                                        <td>25 A</td>
+                                        <td>30 A</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.current_peak">峰值电流</td>
+                                        <td>50 A (5s)</td>
+                                        <td>50 A (5s)</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.stack_count">堆叠数量</td>
+                                        <td>2-5堆叠</td>
+                                        <td>3-8堆叠</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.dimensions">尺寸 (H×W×D)</td>
+                                        <td>175×650×260 mm</td>
+                                        <td>175×650×260 mm</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.weight">重量</td>
+                                        <td>≤35 kg</td>
+                                        <td>≤36.5 kg</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-detail">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <img src="https://ueeshop.ly200-cdn.com/u_file/UPBE/UPBE383/2503/18/products/361.png?x-oss-process=image/format,webp/quality,q_100/resize,m_lfit,h_500,w_500" alt="Enerbrick 2.1" style="max-width: 400px; height: auto; object-fit: contain;">
+                    </div>
+                    <h2 data-i18n="products_page.enerbrick_title">Enerbrick 2.1系列 - 工商业户外一体机柜</h2>
+                    <p data-i18n="products_page.enerbrick_desc">升级版All-in-One一体化设计，支持光伏直流耦合</p>
+                    
+                    <h3 data-i18n="products_page.models_title">型号配置</h3>
+                    <div class="table-container">
+                        <div class="table-wrapper">
+                            <table class="specs-table">
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="specs.model">型号</th>
+                                        <th>Enerbrick 2.1-S</th>
+                                        <th>Enerbrick 2.1-M</th>
+                                        <th>Enerbrick 2.1-L</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-i18n="specs.capacity_range">容量范围</td>
+                                        <td>38.4kWh-76.8kWh（可扩展230kWh）</td>
+                                        <td>71kWh-107kWh</td>
+                                        <td>125kWh-215kWh</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.power_rated">额定功率</td>
+                                        <td>30kW, 60kW</td>
+                                        <td>30kW, 50kW</td>
+                                        <td>30kW, 50kW, 100kW</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.dimensions">尺寸 (W×H×D)</td>
+                                        <td>1350×2100×1050mm</td>
+                                        <td>1233×2093×1304mm</td>
+                                        <td>1686×2093×1354mm</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.weight">重量</td>
+                                        <td>1600kg</td>
+                                        <td>1660kg</td>
+                                        <td>2500kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.protection">防护等级</td>
+                                        <td colspan="3">IP55（电池室）+ IP54（电气室）</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.fire">消防系统</td>
+                                        <td>探测器 + Novec1230</td>
+                                        <td>探测器 + Novec1230 + 喷水</td>
+                                        <td>探测器 + Novec1230 + 喷水</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.temperature">工作温度</td>
+                                        <td colspan="3">-20°C 至 50°C</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-detail">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <img src="https://ueeshop.ly200-cdn.com/u_file/UPBE/UPBE383/2503/18/products/1043-.png?x-oss-process=image/format,webp/quality,q_100/resize,m_lfit,h_500,w_500" alt="EnerBank V2.0" style="max-width: 500px; height: auto; object-fit: contain;">
+                    </div>
+                    <h2 data-i18n="products_page.enerbank_title">EnerBank V2.0 - 集装箱式大型储能系统</h2>
+                    <p data-i18n="products_page.enerbank_desc">第三代模块化集装箱设计，DC BUS构网型技术，100%容量可用</p>
+                    
+                    <div class="table-container">
+                        <div class="table-wrapper">
+                            <table class="specs-table">
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="specs.model">产品型号</th>
+                                        <th>P400C860</th>
+                                        <th>P500C1075</th>
+                                        <th>P600C1290</th>
+                                        <th>P700C1505</th>
+                                        <th>P800C1720</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-i18n="specs.system_capacity">系统容量</td>
+                                        <td>860kWh</td>
+                                        <td>1075kWh</td>
+                                        <td>1290kWh</td>
+                                        <td>1505kWh</td>
+                                        <td>1720kWh</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.power_rated">额定功率</td>
+                                        <td>400kW</td>
+                                        <td>500kW</td>
+                                        <td>600kW</td>
+                                        <td>700kW</td>
+                                        <td>800kW</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.current_max">最大电流</td>
+                                        <td>577A</td>
+                                        <td>722A</td>
+                                        <td>866A</td>
+                                        <td>1010A</td>
+                                        <td>1155A</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.container_weight">集装箱重量</td>
+                                        <td>13,700kg</td>
+                                        <td>16,000kg</td>
+                                        <td>18,300kg</td>
+                                        <td>20,600kg</td>
+                                        <td>22,900kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.cell_type">电芯类型</td>
+                                        <td colspan="5">LFP-280Ah</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.voltage_rated">额定电压</td>
+                                        <td colspan="5">AC400V, 3P4W+PE</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="specs.protection">防护等级</td>
+                                        <td colspan="5">电池舱IP55，电气舱IP34</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-detail">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <img src="https://www.bydenergy.com/material/energy_storage_cn/productappearance/residential/new/Battery-Box_HVB.png" alt="BYD Battery-Box LV5.0+" style="max-width: 400px; height: auto; object-fit: contain;">
+                    </div>
+                    <h2 data-i18n="products_page.byd_title">BYD 产品系列</h2>
+                    
+                    <h3>Battery-Box LV5.0+ - 户用低压系列</h3>
+                    <p data-i18n="products_page.lv5_desc">5.12 kWh - 163.84 kWh | 低压系列 支持1C充放电，10年质保，全新升级</p>
+                    
+                    <h3 data-i18n="products_page.features_title">产品特点</h3>
+                    <ul>
+                        <li>弹性扩容，灵活配置 - 5.12 kWh - 163.84 kWh，广泛兼容BYD及市场主流品牌逆变器</li>
+                        <li>实时温度管理 - 高精度温度传感器，精准监测电芯温度</li>
+                        <li>内置智能BMS - 智能电池管理系统，确保安全可靠</li>
+                        <li>支持1C充放电 - 充放电电流100A，峰值电流200A (10s)</li>
+                        <li>安装流程，化繁为简 - 电池可自动识别逆变器品牌和通信协议</li>
+                        <li>10年质保 - 长寿命设计，保障用户权益</li>
+                    </ul>
+                    
+                    <h3 data-i18n="products_page.specs_title">技术参数</h3>
+                    <div class="table-container">
+                        <div class="table-wrapper">
+                            <table class="specs-table">
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="specs.parameter">参数</th>
+                                        <th>Battery-Box LV5.0+</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>单Pack可用电量</td>
+                                        <td>5.12 kWh</td>
+                                    </tr>
+                                    <tr>
+                                        <td>单Pack电压范围</td>
+                                        <td>40 V - 58.4 V</td>
+                                    </tr>
+                                    <tr>
+                                        <td>单系统最大可用容量</td>
+                                        <td>163.84 kWh (32个并联)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>最大充放电电流</td>
+                                        <td>100 A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>峰值电流</td>
+                                        <td>200 A, 10 s</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-detail">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <img src="https://www.bydenergy.com/material/energy_storage_cn/productappearance/residential/new/Battery-Box_HVB.png" alt="BYD Battery-Box HVS+" style="max-width: 400px; height: auto; object-fit: contain;">
+                    </div>
+                    <h3>Battery-Box HVS+ - 户用高压系列</h3>
+                    <p data-i18n="products_page.hvs_desc">5.12 kWh - 38.4 kWh | 高压系列 支持1C充放电，专利盲插设计，模块化设计，四重安全防护</p>
+                    
+                    <h3 data-i18n="products_page.features_title">产品特点</h3>
+                    <ul>
+                        <li>新一代设计 - 更紧凑、更高效的高压储能解决方案</li>
+                        <li>弹性扩容，灵活配置 - 5.12 kWh - 38.4 kWh，广泛兼容市场主流品牌逆变器</li>
+                        <li>支持1C充放电 - 充放电电流25A，峰值电流55A (15s)</li>
+                        <li>智能运维管理 - 支持云端/App远程监控与运维，具备主动故障预警与远程在线升级功能</li>
+                        <li>智能配置 - 自动识别逆变器型号，快速完成匹配</li>
+                        <li>简易安装 - 无需开盖即可操作，节省安装时间。电池模块间采用专利内部插接连接</li>
+                        <li>快速布线 - 支持线缆侧出与后出，布局更自由</li>
+                    </ul>
+                    
+                    <h3 data-i18n="products_page.specs_title">技术参数</h3>
+                    <div class="table-container">
+                        <div class="table-wrapper">
+                            <table class="specs-table">
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="specs.parameter">参数</th>
+                                        <th>Battery-Box HVS+</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>单Pack可用电量</td>
+                                        <td>2.56 kWh</td>
+                                    </tr>
+                                    <tr>
+                                        <td>单Pack电压范围</td>
+                                        <td>80 V - 115.2 V</td>
+                                    </tr>
+                                    <tr>
+                                        <td>单塔最大可用容量</td>
+                                        <td>12.8 kWh (最多3塔并联)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>最大充放电电流</td>
+                                        <td>25 A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>峰值电流</td>
+                                        <td>55 A, 15 s</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-detail">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <img src="https://www.bydenergy.com/material/energy_storage_cn/productappearance/utility-scale/new/MC_Cube-T_Pro_BESS.png" alt="MC Cube-T Pro BESS" style="max-width: 500px; height: auto; object-fit: contain;">
+                    </div>
+                    <h3 data-i18n="products_page.mc_cube_title">MC Cube-T Pro BESS - 大型储能系统</h3>
+                    
+                    <div class="table-container">
+                        <div class="table-wrapper">
+                            <table class="specs-table">
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="specs.model">型号</th>
+                                        <th data-i18n="specs.system_capacity">系统容量</th>
+                                        <th data-i18n="specs.power_rated">额定功率</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>XH12C-B6012-A-R2</td>
+                                        <td>6,012kWh</td>
+                                        <td>3,006kW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>XH12C-B6432-A-R4</td>
+                                        <td>6,432kWh</td>
+                                        <td>1,608kW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>XH16C-B8016-A-R2</td>
+                                        <td>8,016kWh</td>
+                                        <td>4,008kW</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- 解决方案页面 -->
+    <div class="page" id="solutions">
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="solutions.title">解决方案</h2>
+                    <p data-i18n="solutions.subtitle">为不同场景提供定制化储能解决方案</p>
+                </div>
+                
+                <div class="advantages-grid">
+                    <div class="advantage-card scroll-animate">
+                        <h3 data-i18n="solutions.peak_title">削峰填谷与需求管理</h3>
+                        <p data-i18n="solutions.peak_desc">通过智能削峰解决方案降低能源成本，优化用电模式。降低电费账单，避免峰时电费，典型投资回报周期 3-5 年。</p>
+                    </div>
+                    
+                    <div class="advantage-card scroll-animate">
+                        <h3 data-i18n="solutions.microgrid_title">微电网支持</h3>
+                        <p data-i18n="solutions.microgrid_desc">通过支持并网/离网切换的稳定微电网解决方案，实现能源独立。电网断电期间的能源保障，无缝切换模式。</p>
+                    </div>
+                    
+                    <div class="advantage-card scroll-animate">
+                        <h3 data-i18n="solutions.backup_title">备用电源方案</h3>
+                        <p data-i18n="solutions.backup_desc">为关键设施提供可靠的备用电源系统，确保业务连续性。适用于酒店、工厂、数据中心、医疗机构。</p>
+                    </div>
+                    
+                    <div class="advantage-card scroll-animate">
+                        <h3 data-i18n="solutions.ev_title">电动汽车充电基础设施</h3>
+                        <p data-i18n="solutions.ev_desc">用大容量储能系统为您的电动汽车充电站供电。降低峰时电费，无需电网升级即可实现快充。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- 关于我们页面 -->
+    <div class="page" id="about">
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="about.title">关于我们</h2>
+                    <p data-i18n="about.subtitle">北京一路智行科技有限公司 - 全球领先的绿色能源与储能系统解决方案提供商</p>
+                </div>
+                
+                <div class="product-detail">
+                    <h3 data-i18n="about.intro_title">公司介绍</h3>
+                    <p data-i18n="about.intro_desc">北京一路智行科技有限公司是一家专注于新能源与储能解决方案的高科技系统集成与国际贸易公司。我们致力于连接中国前沿技术与全球市场，为欧洲、中东、非洲及亚洲的客户提供全方位服务。</p>
+                    
+                    <h3 data-i18n="about.mission_title">我们的使命</h3>
+                    <p data-i18n="about.mission">科技引领未来，贸易服务世界</p>
+                    
+                    <h3 data-i18n="about.vision_title">我们的愿景</h3>
+                    <p data-i18n="about.vision">将中国领先技术推向"一带一路"及全球市场</p>
+                    
+                    <h3 data-i18n="about.values_title">核心价值观</h3>
+                    <ul>
+                        <li data-i18n="about.value_innovation">创新：拥抱储能领域的最新技术</li>
+                        <li data-i18n="about.value_reliable">可靠：提供经过验证的认证解决方案</li>
+                        <li data-i18n="about.value_global">全球视野：理解多元化的市场需求</li>
+                        <li data-i18n="about.value_customer">客户至上：提供端到端支持</li>
+                    </ul>
+                </div>
+                
+                <div class="product-detail">
+                    <h3 data-i18n="about.global_title">全球足迹</h3>
+                    <div class="table-container">
+                        <div class="table-wrapper">
+                            <table class="specs-table">
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="about.region">区域</th>
+                                        <th data-i18n="about.countries">覆盖国家/地区</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-i18n="about.middle_east">中东</td>
+                                        <td>阿联酋、科威特、沙特</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="about.nordic">北欧</td>
+                                        <td>芬兰、瑞典、丹麦</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="about.nw_asia">西北亚</td>
+                                        <td>格鲁吉亚、亚美尼亚，蒙古</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-i18n="about.africa">非洲</td>
+                                        <td>南非、阿尔及利亚、刚果</td>
+                                    </tr>
+                                    <tr>
+                                        <td>欧洲</td>
+                                        <td>德国、法国、意大利、科索沃、阿尔巴尼亚</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-detail">
+                    <h3 data-i18n="about.partner_title">合作伙伴机会</h3>
+                    <p data-i18n="about.partner_desc">我们正在欧洲及中东市场积极寻找可靠的合作伙伴。</p>
+                    
+                    <h3 data-i18n="about.benefits_title">合作权益</h3>
+                    <ul>
+                        <li data-i18n="about.benefit_1">独家产品准入权</li>
+                        <li data-i18n="about.benefit_2">竞争力价格</li>
+                        <li data-i18n="about.benefit_3">技术培训与支持</li>
+                        <li data-i18n="about.benefit_4">营销物料</li>
+                        <li data-i18n="about.benefit_5">区域支持团队</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- 联系我们页面 -->
+    <div class="page" id="contact">
+        <section class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="contact.title">获取您的定制化报价</h2>
+                </div>
+                
+                <div class="contact-form">
+                    <h2 data-i18n="contact.info_title">联系方式</h2>
+                    <p><strong data-i18n="contact.company">公司：</strong>北京一路智行科技有限公司</p>
+                    <p><strong data-i18n="contact.person">联系人：</strong>Vincent Zhu</p>
+                    <p><strong data-i18n="contact.email">邮箱：</strong>vincent.zhu@brcorp.cn</p>
+                    <p><strong data-i18n="contact.website">网站：</strong>www.brt-energy.com</p>
+                    <br>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-i18n="form.company">公司名称</label>
+                                <input type="text" name="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="form.name">联系人</label>
+                                <input type="text" name="name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-i18n="form.email">邮箱地址</label>
+                                <input type="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="form.phone">电话号码</label>
+                                <input type="tel" name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-i18n="form.country">国家</label>
+                                <input type="text" name="country" required>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="form.business_type">业务类型</label>
+                                <select name="businessType" required>
+                                    <option value="" data-i18n="form.select">请选择</option>
+                                    <option value="dealer" data-i18n="form.dealer">经销商/代理商</option>
+                                    <option value="epc" data-i18n="form.epc">EPC 承包商</option>
+                                    <option value="installer" data-i18n="form.installer">系统安装商</option>
+                                    <option value="customer" data-i18n="form.customer">终端客户</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label data-i18n="form.product_interest">感兴趣产品</label>
+                            <select name="productInterest" required>
+                                <option value="" data-i18n="form.select">请选择</option>
+                                <option value="residential" data-i18n="form.residential">户用储能</option>
+                                <option value="ci" data-i18n="form.ci">工商业储能</option>
+                                <option value="utility" data-i18n="form.utility">大型储能</option>
+                                <option value="all" data-i18n="form.all">全部产品线</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label data-i18n="form.message">项目详情 / 留言</label>
+                            <textarea name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="form.submit">提交询盘</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="https://www.coze.cn/s/Sg-gafwXF90/?width_height=1773x1526" alt="Beijing B&R Technology" class="footer-logo">
+                    <h4 data-i18n="footer.company">北京一路智行科技有限公司</h4>
+                    <p data-i18n="footer.slogan">全球储能解决方案值得信赖的合作伙伴</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-i18n="nav.products">产品中心</h4>
+                    <ul>
+                        <li><a href="#" onclick="navigateTo('products'); return false;" data-i18n="products.residential_badge">户用储能</a></li>
+                        <li><a href="#" onclick="navigateTo('products'); return false;" data-i18n="products.ci_badge">工商业储能</a></li>
+                        <li><a href="#" onclick="navigateTo('products'); return false;" data-i18n="products.utility_badge">大型储能</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-i18n="nav.solutions">解决方案</h4>
+                    <ul>
+                        <li><a href="#" onclick="navigateTo('solutions'); return false;" data-i18n="solutions.peak_title">削峰填谷</a></li>
+                        <li><a href="#" onclick="navigateTo('solutions'); return false;" data-i18n="solutions.microgrid_title">微电网</a></li>
+                        <li><a href="#" onclick="navigateTo('solutions'); return false;" data-i18n="solutions.backup_title">备用电源</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-i18n="nav.contact">联系我们</h4>
+                    <p><span data-i18n="contact.email">邮箱：</span>vincent.zhu@brcorp.cn</p>
+                    <p>电话/Telegram：+86-186-2033-8833</p>
+                    <p>Whatsapp：+852-4443-9167</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">北京一路智行科技有限公司 © 2026 版权所有</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // ==================== EmailJS配置 ====================
+        // 注意:使用前请先在 https://www.emailjs.com/ 注册账号并获取以下三个ID
+        const EMAILJS_CONFIG = {
+            SERVICE_ID: 'service_buuade4',        // 替换为你的Service ID
+            TEMPLATE_ID: 'template_9zrn84o',        // 替换为你的Template ID
+            PUBLIC_KEY: 'AEmZ4_wRt3EL_kSuE'           // 替换为你的Public Key
+        };
+        
+        // 初始化EmailJS
+        (function() {
+            if (typeof emailjs !== 'undefined') {
+                try {
+                    emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+                    console.log('EmailJS initialized successfully');
+                } catch (error) {
+                    console.error('EmailJS initialization error:', error);
+                }
+            }
+        })();
+    </script>
+    <script>
+        // ==================== 多语言翻译数据 ====================
+        const translations = {
+            'zh-CN': {
+                'nav.home': '首页',
+                'nav.products': '产品中心',
+                'nav.solutions': '解决方案',
+                'nav.about': '关于我们',
+                'nav.contact': '联系我们',
+                'nav.cta': '获取报价',
+                'hero.badge': '全球领先储能解决方案',
+                'hero.headline': '全球储能解决方案值得信赖的合作伙伴',
+                'hero.subheadline': '将中国领先技术连接至欧洲及中东市场 | BYD、EnerShare 授权代理商',
+                'hero.cta_primary': '获取报价',
+                'hero.cta_secondary': '探索产品',
+                'partners.title': '依托行业领军品牌',
+                'partners.subtitle': '我们代表全球最值得信赖的储能品牌',
+                'partners.byd': 'BYD',
+                'partners.byd_desc': '全球电芯与大型储能领导者',
+                'partners.enershare': 'EnerShare',
+                'partners.enershare_desc': '欧洲热销户用储能解决方案',
+                'products.title': '完整储能产品组合',
+                'products.subtitle': '从户用家庭到大型公用事业项目',
+                'products.residential_badge': '户用储能',
+                'products.residential_title': '户用储能（Residential ESS）',
+                'products.residential_1': 'EnerShare Core 1.0/Active 系列',
+                'products.residential_2': '可堆叠 4.8-153.6 kWh',
+                'products.residential_3': '即插即用安装',
+                'products.residential_4': '欧洲 7 天交付',
+                'products.ci_badge': '工商业储能',
+                'products.ci_title': '工商业储能（C&I ESS）',
+                'products.ci_1': 'EnerShare Enerbrick 2.1 系列',
+                'products.ci_2': '200kWh - 1MWh 范围',
+                'products.ci_3': '削峰填谷与需求管理',
+                'products.ci_4': '并网/离网切换',
+                'products.utility_badge': '大型储能',
+                'products.utility_title': '大型储能（Utility-Scale ESS）',
+                'products.utility_1': 'BYD MC Cube/Cube Pro',
+                'products.utility_2': '单集装箱最大容量 5MWh+',
+                'products.utility_3': '全球首创 CTS 技术',
+                'products.utility_4': '液冷系统温控 <3°C',
+                'advantages.title': '为什么选择北京一路智行科技？',
+                'advantages.positioning_title': '精准市场定位',
+                'advantages.positioning_desc': '深入洞察国际市场需求，针对不同区域提供定制化、多样化解决方案。专注于欧洲及中东市场。',
+                'advantages.network_title': '广泛渠道网络',
+                'advantages.network_desc': '线上线下销售渠道，多国售后服务网点。阿联酋、科威特、芬兰、格鲁吉亚、蒙古等地本土化服务。',
+                'advantages.service_title': '一站式服务',
+                'advantages.service_desc': '方案设计 → 采购 → 国际物流 → 目的地交付 → 运维。为全球客户提供端到端支持。',
+                'advantages.quality_title': '质量与安全至上',
+                'advantages.quality_desc': 'BYD 刀片电池技术（针刺实验不起火），通过 UL9540A、IEC62619、CE、UN38.3 认证。工作温度范围 -30°C 至 +55°C。',
+                'cases.title': '全球实践，业绩斐然',
+                'cases.subtitle': '在各大洲交付可靠的储能解决方案',
+                'cases.case1_title': '🌍 南非 - Pongola 狩猎度假村',
+                'cases.case1_desc': '125kW 光伏 + 100kW/215kWh 储能系统',
+                'cases.case1_note': '户外环境，可靠性要求高',
+                'cases.case2_title': '🏨 南非 - 约翰内斯堡酒店',
+                'cases.case2_desc': '500kW 光伏 + 500kW/1MWh 储能系统',
+                'cases.case2_note': '大型商用储能，削峰填谷',
+                'cases.case3_title': '☀️ 阿曼 - 马斯喀特酒店',
+                'cases.case3_desc': '200kW/430kWh 储能系统',
+                'cases.case3_note': '高温环境适应性',
+                'cases.case4_title': '🏝️ 斯里兰卡 - 酒店',
+                'cases.case4_desc': '200kW/430kWh 储能系统',
+                'cases.case4_note': '备用电源保障',
+                'products_page.title': '产品中心',
+                'products_page.subtitle': '详细的技术规格和产品信息',
+                'products_page.core_title': 'EnerShare CORE 1.0系列 - 高压堆叠电池',
+                'products_page.core_desc': '欧洲最受欢迎的高压堆叠电池，容量范围：5.5kWh - 153.6kWh',
+                'products_page.features_title': '产品特点',
+                'products_page.feature_1': 'LFP电芯技术，安全可靠',
+                'products_page.feature_2': '自动逆变器配置，免设置',
+                'products_page.feature_3': '支持单相/三相，并网/离网/备用电源',
+                'products_page.feature_4': 'IP65防护，VDE2510合规',
+                'products_page.feature_5': '最多6塔并联，系统可扩展至153.6kWh',
+                'products_page.specs_title': '技术参数',
+                'products_page.enerbrick_title': 'Enerbrick 2.1系列 - 工商业户外一体机柜',
+                'products_page.enerbrick_desc': '升级版All-in-One一体化设计，支持光伏直流耦合',
+                'products_page.models_title': '型号配置',
+                'products_page.enerbank_title': 'EnerBank V2.0 - 集装箱式大型储能系统',
+                'products_page.enerbank_desc': '第三代模块化集装箱设计，DC BUS构网型技术，100%容量可用',
+                'products_page.byd_title': 'BYD 产品系列',
+                'products_page.haohan_title': 'Haohan 浩瀚 - 大型储能系统',
+                'products_page.mc_cube_title': 'MC Cube-T Pro BESS - 大型储能系统',
+                'products_page.lv5_title': 'Battery-Box LV5.0+ - 户用低压系列',
+                'products_page.lv5_desc': '5.12 kWh - 163.84 kWh | 低压系列 支持1C充放电，10年质保，全新升级',
+                'products_page.hvs_title': 'Battery-Box HVS+ - 户用高压系列',
+                'products_page.hvs_desc': '5.12 kWh - 38.4 kWh | 高压系列 支持1C充放电，专利盲插设计，模块化设计，四重安全防护',
+                'products_page.enershare_title': 'EnerShare 产品系列',
+                'specs.parameter': '参数',
+                'specs.energy': '可用能量',
+                'specs.voltage_nominal': '标称电压',
+                'specs.voltage_working': '工作电压',
+                'specs.current_max': '最大电流',
+                'specs.current_peak': '峰值电流',
+                'specs.stack_count': '堆叠数量',
+                'specs.dimensions': '尺寸',
+                'specs.weight': '重量',
+                'specs.model': '型号',
+                'specs.capacity_range': '容量范围',
+                'specs.power_rated': '额定功率',
+                'specs.protection': '防护等级',
+                'specs.fire': '消防系统',
+                'specs.temperature': '工作温度',
+                'specs.system_capacity': '系统容量',
+                'specs.container_weight': '集装箱重量',
+                'specs.cell_type': '电芯类型',
+                'specs.voltage_rated': '额定电压',
+                'solutions.title': '解决方案',
+                'solutions.subtitle': '为不同场景提供定制化储能解决方案',
+                'solutions.peak_title': '削峰填谷与需求管理',
+                'solutions.peak_desc': '通过智能削峰解决方案降低能源成本，优化用电模式。降低电费账单，避免峰时电费，典型投资回报周期 3-5 年。',
+                'solutions.microgrid_title': '微电网支持',
+                'solutions.microgrid_desc': '通过支持并网/离网切换的稳定微电网解决方案，实现能源独立。电网断电期间的能源保障，无缝切换模式。',
+                'solutions.backup_title': '备用电源方案',
+                'solutions.backup_desc': '为关键设施提供可靠的备用电源系统，确保业务连续性。适用于酒店、工厂、数据中心、医疗机构。',
+                'solutions.ev_title': '电动汽车充电基础设施',
+                'solutions.ev_desc': '用大容量储能系统为您的电动汽车充电站供电。降低峰时电费，无需电网升级即可实现快充。',
+                'about.title': '关于我们',
+                'about.subtitle': '北京一路智行科技有限公司 - 全球领先的绿色能源与储能系统解决方案提供商',
+                'about.intro_title': '公司介绍',
+                'about.intro_desc': '北京一路智行科技有限公司是一家专注于新能源与储能解决方案的高科技系统集成与国际贸易公司。我们致力于连接中国前沿技术与全球市场，为欧洲、中东、非洲及亚洲的客户提供全方位服务。',
+                'about.mission_title': '我们的使命',
+                'about.mission': '科技引领未来，贸易服务世界',
+                'about.vision_title': '我们的愿景',
+                'about.vision': '将中国领先技术推向"一带一路"及全球市场',
+                'about.values_title': '核心价值观',
+                'about.value_innovation': '创新：拥抱储能领域的最新技术',
+                'about.value_reliable': '可靠：提供经过验证的认证解决方案',
+                'about.value_global': '全球视野：理解多元化的市场需求',
+                'about.value_customer': '客户至上：提供端到端支持',
+                'about.global_title': '全球足迹',
+                'about.region': '区域',
+                'about.countries': '覆盖国家/地区',
+                'about.middle_east': '中东',
+                'about.nordic': '北欧',
+                'about.nw_asia': '西北亚',
+                'about.africa': '非洲',
+                'about.expanding': '拓展中',
+                'about.partner_title': '合作伙伴机会',
+                'about.partner_desc': '我们正在欧洲及中东市场积极寻找可靠的合作伙伴。',
+                'about.benefits_title': '合作权益',
+                'about.benefit_1': '独家产品准入权',
+                'about.benefit_2': '竞争力价格',
+                'about.benefit_3': '技术培训与支持',
+                'about.benefit_4': '营销物料',
+                'about.benefit_5': '区域支持团队',
+                'contact.title': '获取您的定制化报价',
+                'contact.info_title': '联系方式',
+                'contact.company': '公司：',
+                'contact.person': '联系人：',
+                'contact.email': '邮箱：',
+                'contact.website': '网站：',
+                'form.company': '公司名称',
+                'form.name': '联系人',
+                'form.email': '邮箱地址',
+                'form.phone': '电话号码',
+                'form.country': '国家',
+                'form.business_type': '业务类型',
+                'form.select': '请选择',
+                'form.dealer': '经销商/代理商',
+                'form.epc': 'EPC 承包商',
+                'form.installer': '系统安装商',
+                'form.customer': '终端客户',
+                'form.product_interest': '感兴趣产品',
+                'form.residential': '户用储能',
+                'form.ci': '工商业储能',
+                'form.utility': '大型储能',
+                'form.all': '全部产品线',
+                'form.message': '项目详情 / 留言',
+                'form.submit': '提交询盘',
+                'form.submitting': '提交中...',
+                'form.success': '提交成功！我们将在24小时内联系您。',
+                'form.error': '提交失败，请重试或直接联系我们。',
+                'form.config_error': 'EmailJS未配置，请联系管理员。',
+                'footer.company': '北京一路智行科技有限公司',
+                'footer.slogan': '全球储能解决方案值得信赖的合作伙伴',
+                'footer.copyright': '北京一路智行科技有限公司 © 2026 版权所有'
+            },
+            'en': {
+                'nav.home': 'Home',
+                'nav.products': 'Products',
+                'nav.solutions': 'Solutions',
+                'nav.about': 'About Us',
+                'nav.contact': 'Contact',
+                'nav.cta': 'Get a Quote',
+                'hero.badge': 'Global Leading Energy Storage Solutions',
+                'hero.headline': 'Your Trusted Partner in Global Energy Storage Solutions',
+                'hero.subheadline': 'Connecting China\'s Leading Technology to European & Middle East Markets | Authorized Distributor for BYD, EnerShare',
+                'hero.cta_primary': 'Get a Quote',
+                'hero.cta_secondary': 'Explore Products',
+                'partners.title': 'Powered by Industry Leaders',
+                'partners.subtitle': 'We represent world\'s most trusted energy storage brands',
+                'partners.byd': 'BYD',
+                'partners.byd_desc': 'Global leader in cells and utility-scale storage',
+                'partners.enershare': 'EnerShare',
+                'partners.enershare_desc': 'European popular residential storage solutions',
+                'products.title': 'Complete Energy Storage Portfolio',
+                'products.subtitle': 'From residential homes to utility-scale projects',
+                'products.residential_badge': 'Residential',
+                'products.residential_title': 'Residential ESS',
+                'products.residential_1': 'EnerShare Core 1.0/Active Series',
+                'products.residential_2': 'Stackable 4.8-153.6 kWh',
+                'products.residential_3': 'Plug-and-play installation',
+                'products.residential_4': '7-day delivery in Europe',
+                'products.ci_badge': 'C&I',
+                'products.ci_title': 'C&I ESS',
+                'products.ci_1': 'EnerShare Enerbrick 2.1 Series',
+                'products.ci_2': '200kWh - 1MWh range',
+                'products.ci_3': 'Peak shaving & demand management',
+                'products.ci_4': 'On/off-grid switching',
+                'products.utility_badge': 'Utility-Scale',
+                'products.utility_title': 'Utility-Scale ESS',
+                'products.utility_1': 'BYD MC Cube/Cube Pro',
+                'products.utility_2': 'Up to 5MWh+ per container',
+                'products.utility_3': 'World\'s first CTS technology',
+                'products.utility_4': 'Liquid cooling with AT <3°C',
+                'advantages.title': 'Why Choose Beijing B&R Technology?',
+                'advantages.positioning_title': 'Precise Market Positioning',
+                'advantages.positioning_desc': 'Deep insights into international market demands, customized and diversified solutions for each region. Tailored approach for European & Middle East markets.',
+                'advantages.network_title': 'Extensive Channel Network',
+                'advantages.network_desc': 'Online and offline sales channels, after-sales service points across multiple countries. Local presence in UAE, Kuwait, Finland, Georgia, Mongolia.',
+                'advantages.service_title': 'One-Stop Service',
+                'advantages.service_desc': 'Solution Design → Procurement → International Logistics → Destination Delivery → O&M. End-to-end support for global customers.',
+                'advantages.quality_title': 'Quality & Safety First',
+                'advantages.quality_desc': 'BYD Blade Battery technology (no fire in nail penetration). UL9540A, IEC62619, CE, UN38.3 certified. Operation from -30°C to +55°C.',
+                'cases.title': 'Proven Track Record Worldwide',
+                'cases.subtitle': 'Delivering reliable energy storage solutions across continents',
+                'cases.case1_title': '🌍 South Africa - Game Lodge in Pongola',
+                'cases.case1_desc': '125kW Solar + 100kW/215kWh BESS',
+                'cases.case1_note': 'Outdoor environment, high reliability requirements',
+                'cases.case2_title': '🏨 South Africa - Hotel in Johannesburg',
+                'cases.case2_desc': '500kW Solar + 500kW/1MWh BESS',
+                'cases.case2_note': 'Large commercial storage, peak shaving',
+                'cases.case3_title': '☀️ Oman - Hotel in Muscat',
+                'cases.case3_desc': '200kW/430kWh BESS',
+                'cases.case3_note': 'High-temperature adaptability',
+                'cases.case4_title': '🏝️ Sri Lanka - Hotel in Sri Lanka',
+                'cases.case4_desc': '200kW/430kWh BESS',
+                'cases.case4_note': 'Backup power assurance',
+                'products_page.title': 'Products',
+                'products_page.subtitle': 'Detailed technical specifications and product information',
+                'products_page.core_title': 'EnerShare CORE 1.0 Series - HV Stack Battery',
+                'products_page.core_desc': 'Europe\'s most popular high-voltage stack battery, capacity range: 5.5kWh - 153.6kWh',
+                'products_page.features_title': 'Key Features',
+                'products_page.feature_1': 'LFP cell technology, safe and reliable',
+                'products_page.feature_2': 'Automatic inverter configuration, setup-free',
+                'products_page.feature_3': 'Supports single-phase/three-phase, on-grid/off-grid/backup power',
+                'products_page.feature_4': 'IP65 protection, VDE2510 compliant',
+                'products_page.feature_5': 'Up to 6 towers in parallel, system expandable to 153.6kWh',
+                'products_page.specs_title': 'Technical Specifications',
+                'products_page.enerbrick_title': 'Enerbrick 2.1 Series - C&I Outdoor Cabinet',
+                'products_page.enerbrick_desc': 'Upgraded All-in-One design, supports PV DC coupling',
+                'products_page.models_title': 'Model Configuration',
+                'products_page.enerbank_title': 'EnerBank V2.0 - Containerized Utility-Scale BESS',
+                'products_page.enerbank_desc': 'Third-generation modular container design, DC BUS grid-forming technology, 100% capacity available',
+                'products_page.byd_title': 'BYD Product Series',
+                'products_page.haohan_title': 'Haohan - Utility-Scale Energy Storage System',
+                'products_page.mc_cube_title': 'MC Cube-T Pro BESS - Utility-Scale Energy Storage System',
+                'specs.parameter': 'Parameter',
+                'specs.energy': 'Available Energy',
+                'specs.voltage_nominal': 'Nominal Voltage',
+                'specs.voltage_working': 'Working Voltage',
+                'specs.current_max': 'Max Current',
+                'specs.current_peak': 'Peak Current',
+                'specs.stack_count': 'Stack Count',
+                'specs.dimensions': 'Dimensions',
+                'specs.weight': 'Weight',
+                'specs.model': 'Model',
+                'specs.capacity_range': 'Capacity Range',
+                'specs.power_rated': 'Rated Power',
+                'specs.protection': 'Protection Rating',
+                'specs.fire': 'Fire Protection',
+                'specs.temperature': 'Operating Temperature',
+                'specs.system_capacity': 'System Capacity',
+                'specs.container_weight': 'Container Weight',
+                'specs.cell_type': 'Cell Type',
+                'specs.voltage_rated': 'Rated Voltage',
+                'solutions.title': 'Solutions',
+                'solutions.subtitle': 'Customized energy storage solutions for different scenarios',
+                'solutions.peak_title': 'Peak Shaving & Demand Management',
+                'solutions.peak_desc': 'Reduce energy costs through intelligent peak shaving solutions. Optimize usage patterns, avoid peak tariffs, typical ROI period 3-5 years.',
+                'solutions.microgrid_title': 'Microgrid Support',
+                'solutions.microgrid_desc': 'Achieve energy independence with stable microgrid solutions supporting on-grid/off-grid switching. Energy assurance during power outages, seamless mode switching.',
+                'solutions.backup_title': 'Backup Power Solutions',
+                'solutions.backup_desc': 'Provide reliable backup power systems for critical facilities, ensuring business continuity. Suitable for hotels, factories, data centers, medical institutions.',
+                'solutions.ev_title': 'EV Charging Infrastructure',
+                'solutions.ev_desc': 'Power your EV charging stations with large-capacity energy storage systems. Reduce peak tariffs, achieve fast charging without grid upgrades.',
+                'about.title': 'About Us',
+                'about.subtitle': 'Beijing B&R Technology Co., Ltd. - Global Leading Green Energy & Energy Storage System Solution Provider',
+                'about.intro_title': 'Company Introduction',
+                'about.intro_desc': 'Beijing B&R Technology Co., Ltd. is a high-tech system integration and international trading company focused on new energy and energy storage solutions. We are dedicated to connecting China\'s cutting-edge technology with global markets, providing comprehensive services to customers in Europe, the Middle East, Africa, and Asia.',
+                'about.mission_title': 'Our Mission',
+                'about.mission': 'Technology Leads the Future, Trade Serves the World',
+                'about.vision_title': 'Our Vision',
+                'about.vision': 'Bringing China\'s Leading Technology to the "Belt and Road" and Global Markets',
+                'about.values_title': 'Core Values',
+                'about.value_innovation': 'Innovation: Embracing the latest technologies in energy storage',
+                'about.value_reliable': 'Reliable: Providing proven, certified solutions',
+                'about.value_global': 'Global Vision: Understanding diverse market demands',
+                'about.value_customer': 'Customer First: Providing end-to-end support',
+                'about.global_title': 'Global Footprint',
+                'about.region': 'Region',
+                'about.countries': 'Coverage Countries/Regions',
+                'about.middle_east': 'Middle East',
+                'about.nordic': 'Nordic',
+                'about.nw_asia': 'Northwest Asia',
+                'about.africa': 'Africa',
+                'about.expanding': 'Expanding',
+                'about.partner_title': 'Partnership Opportunities',
+                'about.partner_desc': 'We are actively seeking reliable partners in European and Middle East markets.',
+                'about.benefits_title': 'Partnership Benefits',
+                'about.benefit_1': 'Exclusive product access',
+                'about.benefit_2': 'Competitive pricing',
+                'about.benefit_3': 'Technical training and support',
+                'about.benefit_4': 'Marketing materials',
+                'about.benefit_5': 'Regional support team',
+                'contact.title': 'Get Your Customized Quote',
+                'contact.info_title': 'Contact Information',
+                'contact.company': 'Company:',
+                'contact.person': 'Contact Person:',
+                'contact.email': 'Email:',
+                'contact.website': 'Website:',
+                'form.company': 'Company Name',
+                'form.name': 'Contact Person',
+                'form.email': 'Email Address',
+                'form.phone': 'Phone Number',
+                'form.country': 'Country',
+                'form.business_type': 'Business Type',
+                'form.select': 'Please Select',
+                'form.dealer': 'Distributor/Agent',
+                'form.epc': 'EPC Contractor',
+                'form.installer': 'System Installer',
+                'form.customer': 'End Customer',
+                'form.product_interest': 'Interested Product',
+                'form.residential': 'Residential ESS',
+                'form.ci': 'C&I ESS',
+                'form.utility': 'Utility-Scale ESS',
+                'form.all': 'All Product Lines',
+                'form.message': 'Project Details / Message',
+                'form.submit': 'Submit Inquiry',
+                'form.submitting': 'Submitting...',
+                'form.success': 'Submission successful! We will contact you within 24 hours.',
+                'form.error': 'Submission failed. Please try again or contact us directly.',
+                'form.config_error': 'EmailJS not configured. Please contact the administrator.',
+                'footer.company': 'Beijing B&R Technology Co., Ltd.',
+                'footer.slogan': 'Your Trusted Partner in Global Energy Storage Solutions',
+                'footer.copyright': 'Beijing B&R Technology Co., Ltd. © 2026 All Rights Reserved'
+            }
+        };
+        
+        // ==================== 语言配置 ====================
+        const languageConfig = {
+            'zh-CN': { name: '中文', flag: '🇨🇳', lang: 'zh-CN' },
+            'en': { name: 'English', flag: '🇬🇧', lang: 'en' },
+            'fr': { name: 'Français', flag: '🇫🇷', lang: 'fr' },
+            'fi': { name: 'Suomi', flag: '🇫🇮', lang: 'fi' },
+            'de': { name: 'Deutsch', flag: '🇩🇪', lang: 'de' }
+        };
+        
+        let currentLang = 'zh-CN';
+        
+        // ==================== Toast 通知功能 ====================
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            const icon = type === 'success' ? '✓' : '✕';
+            toast.innerHTML = `
+                <span class="toast-icon">${icon}</span>
+                <span class="toast-message">${message}</span>
+                <button class="toast-close" onclick="this.parentElement.remove()">×</button>
+            `;
+            container.appendChild(toast);
+            
+            setTimeout(() => toast.classList.add('show'), 10);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 5000);
+        }
+        
+        // ==================== 多语言切换功能 ====================
+        function setLanguage(lang) {
+            currentLang = lang;
+            const config = languageConfig[lang];
+            
+            document.getElementById('currentLanguage').textContent = `${config.flag} ${config.name}`;
+            
+            document.querySelectorAll('.language-option').forEach(option => {
+                option.classList.remove('active');
+                if (option.dataset.lang === lang) {
+                    option.classList.add('active');
+                }
+            });
+            
+            document.documentElement.lang = lang;
+            
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.dataset.i18n;
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                } else if (translations['en'] && translations['en'][key]) {
+                    element.textContent = translations['en'][key];
+                }
+            });
+            
+            const loadingText = document.getElementById('loadingText');
+            if (loadingText) {
+                loadingText.textContent = lang === 'zh-CN' ? '正在加载...' : 'Loading...';
+            }
+            
+            updateSEOTags(lang);
+            
+            localStorage.setItem('preferredLanguage', lang);
+            
+            showToast(config.name === '中文' ? '语言已切换为中文' : `Language switched to ${config.name}`);
+        }
+        
+        function updateSEOTags(lang) {
+            const titleKey = lang === 'zh-CN' ? '北京一路智行科技有限公司 | 全球储能解决方案值得信赖的合作伙伴' : 'Beijing B&R Technology Co., Ltd. | Global Energy Storage Solutions';
+            document.title = titleKey;
+            
+            const htmlLang = document.documentElement.getAttribute('lang');
+            const alternateLinks = document.querySelectorAll('link[rel="alternate"]');
+            alternateLinks.forEach(link => {
+                const hreflang = link.getAttribute('hreflang');
+                link.href = `https://www.brt-energy.com/${hreflang === 'x-default' ? '' : hreflang + '/'}`;
+            });
+        }
+        
+        // 语言切换器事件
+        document.getElementById('languageBtn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            document.getElementById('languageDropdown').classList.toggle('active');
+        });
+        
+        document.addEventListener('click', function() {
+            document.getElementById('languageDropdown').classList.remove('active');
+        });
+        
+        document.querySelectorAll('.language-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.dataset.lang;
+                setLanguage(lang);
+            });
+        });
+        
+        // ==================== 滚动动画 ====================
+        function handleScrollAnimations() {
+            const scrollElements = document.querySelectorAll('.scroll-animate, .scroll-animate-fade-in, .scroll-animate-scale');
+            scrollElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // ==================== 视差效果 ====================
+        function handleParallax() {
+            const parallaxBgs = document.querySelectorAll('.parallax-bg');
+            const scrolled = window.pageYOffset;
+            parallaxBgs.forEach(bg => {
+                const speed = 0.5;
+                const yPos = -(scrolled * speed);
+                bg.style.transform = `translateY(${yPos}px)`;
+            });
+        }
+        
+        // ==================== 滚动事件监听 ====================
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    handleScrollAnimations();
+                    handleParallax();
+                    
+                    const navbar = document.getElementById('navbar');
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                    
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+        
+        // ==================== 初始化 ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && languageConfig[savedLang]) {
+                setLanguage(savedLang);
+            }
+            
+            handleScrollAnimations();
+            
+            setTimeout(() => {
+                const loading = document.getElementById('pageLoading');
+                if (loading) {
+                    loading.classList.remove('active');
+                }
+            }, 500);
+        });
+        
+        // ==================== 页面导航 ====================
+        function navigateTo(pageId) {
+            const loading = document.getElementById('pageLoading');
+            if (loading) {
+                loading.classList.add('active');
+            }
+            
+            setTimeout(() => {
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.remove('active', 'fade-in');
+                });
+                
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                    targetPage.classList.add('fade-in');
+                }
+                
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-page') === pageId) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                closeMobileMenu();
+                
+                if (loading) {
+                    loading.classList.remove('active');
+                }
+                
+                setTimeout(() => handleScrollAnimations(), 100);
+            }, 300);
+        }
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageId = this.getAttribute('data-page');
+                navigateTo(pageId);
+            });
+        });
+        
+        // ==================== 移动端菜单控制 ====================
+        function openMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuOverlay = document.getElementById('menuOverlay');
+            const body = document.body;
+            
+            navLinks.classList.add('active');
+            menuOverlay.classList.add('active');
+            body.style.overflow = 'hidden';
+            body.style.position = 'fixed';
+            body.style.width = '100%';
+        }
+        
+        function closeMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuOverlay = document.getElementById('menuOverlay');
+            const body = document.body;
+            
+            navLinks.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            body.style.overflow = '';
+            body.style.position = '';
+            body.style.width = '';
+        }
+        
+        document.getElementById('mobileMenuBtn').addEventListener('click', openMobileMenu);
+        document.getElementById('menuClose').addEventListener('click', closeMobileMenu);
+        document.getElementById('menuOverlay').addEventListener('click', closeMobileMenu);
+        
+        // ==================== 表单提交处理 ====================
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = {
+                company: formData.get('company'),
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                country: formData.get('country'),
+                businessType: formData.get('businessType'),
+                productInterest: formData.get('productInterest'),
+                message: formData.get('message'),
+                language: currentLang,
+                timestamp: new Date().toISOString()
+            };
+            
+            submitFormData(data);
+        });
+        
+        function submitFormData(data) {
+            // 检查EmailJS是否已配置
+            if (EMAILJS_CONFIG.SERVICE_ID === 'your_service_id' || 
+                EMAILJS_CONFIG.TEMPLATE_ID === 'your_template_id' || 
+                EMAILJS_CONFIG.PUBLIC_KEY === 'your_public_key') {
+                
+                console.error('EmailJS not configured properly');
+                showToast(translations[currentLang]['form.config_error'] || 'EmailJS not configured. Please contact the administrator.');
+                return;
+            }
+            
+            const submitBtn = document.querySelector('#contactForm button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = translations[currentLang]['form.submitting'] || 'Submitting...';
+            submitBtn.disabled = true;
+            
+            // 准备EmailJS模板参数
+            const templateParams = {
+                to_email: 'vincent.zhu@brcorp.cn',  // 接收邮箱
+                from_name: data.name,
+                from_email: data.email,
+                company: data.company,
+                phone: data.phone || 'Not provided',
+                country: data.country,
+                business_type: data.businessType,
+                product_interest: data.productInterest,
+                message: data.message,
+                language: data.language,
+                timestamp: new Date().toLocaleString()
+            };
+            
+            // 发送邮件
+            emailjs.send(
+                EMAILJS_CONFIG.SERVICE_ID,
+                EMAILJS_CONFIG.TEMPLATE_ID,
+                templateParams
+            )
+            .then(function(response) {
+                console.log('EmailJS success:', response);
+                showToast(translations[currentLang]['form.success'] || 'Submission successful! We will contact you within 24 hours.');
+                document.getElementById('contactForm').reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            })
+            .catch(function(error) {
+                console.error('EmailJS error:', error);
+                showToast(translations[currentLang]['form.error'] || 'Submission failed. Please try again or contact us directly.');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+        }
+        
+        // ==================== 平滑滚动 ====================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#contact') {
+                    e.preventDefault();
+                    navigateTo('contact');
+                }
+            });
+        });
+        
+        // ==================== 表单输入优化 ====================
+        const formInputs = document.querySelectorAll('input, select, textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('touchstart', function() {
+                this.style.fontSize = '16px';
+            }, { passive: true });
+        });
+        
+        // ==================== 防止误触 ====================
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(e) {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                e.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+        
+        // ==================== 键盘导航 ====================
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeMobileMenu();
+                document.getElementById('languageDropdown').classList.remove('active');
+            }
+        });
+        
+        // ==================== 图片懒加载 ====================
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            imageObserver.unobserve(img);
+                        }
+                    }
+                });
+            }, { rootMargin: '50px 0px', threshold: 0.1 });
+            
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            lazyImages.forEach(img => imageObserver.observe(img));
+        }
+    </script>
+</body>
+</html>
